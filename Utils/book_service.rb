@@ -5,7 +5,7 @@ class BookService
   def self.save_books(books)
     File.write('books.json', JSON.pretty_generate(books))
   end
-
+#handle the books loading state from the json file
   def self.load_books
     json_data = JSON.parse(File.read('books.json'), symbolize_names: true)
     json_data.map { |book_data| Book.new(*book_data.values_at(:publish_date, :cover_state, :publisher)) }
