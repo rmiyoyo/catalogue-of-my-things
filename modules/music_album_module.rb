@@ -7,12 +7,12 @@ module MusicAlbumModule
     album_published_date = take_valid_album_date
     album_on_spotify = take_valid_spotify_choice
 
-    create_music_album(album_published_date, album_on_spotify)
+    generate_music_album(album_published_date, album_on_spotify)
   end
 
   # Lists all music albums, displaying their publication dates and Spotify status.
   def list_all_music_albums
-    if @music_albums.empty?
+    if @musicalbums.empty?
       puts "\nNo music albums found.\n\n"
     else
       puts 'List of all albums:'
@@ -22,7 +22,7 @@ module MusicAlbumModule
 
   # Displays information about each music album, including publication date and Spotify status.
   def display_album_info
-    @music_albums.each_with_index do |music_album, index|
+    @musicalbums.each_with_index do |music_album, index|
       puts "(#{index + 1}) Published in: #{music_album.publish_date}. #{generated_answer(music_album.on_spotify)}"
     end
   end
@@ -61,12 +61,12 @@ module MusicAlbumModule
   end
 
   # Creates a music album based on the provided published date and Spotify choice.
-  def create_music_album(album_published_date, album_on_spotify)
+  def generate_music_album(album_published_date, album_on_spotify)
     if %w[y yes].include?(album_on_spotify)
-      @music_albums << MusicAlbum.new(album_published_date, true)
+      @musicalbums << MusicAlbum.new(album_published_date, true)
       puts "\nMusic album created successfully!\n\n"
     elsif %w[n no].include?(album_on_spotify)
-      @music_albums << MusicAlbum.new(album_published_date, false)
+      @musicalbums << MusicAlbum.new(album_published_date, false)
       puts "\nMusic album created successfully!\n\n"
     else
       puts "\n Error: The music album was not created!\n\n"

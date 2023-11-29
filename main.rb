@@ -1,13 +1,14 @@
-# main.rb
-
 require_relative 'Classes/item'
+require_relative 'app'
 
-def print_menu
-  puts '1 Move item to archive'
-  puts '2 Quit'
+def main
+  app = App.new
+  app.create_a_genre
+  app.save_genres
+  app.create_a_music_album
+  app.save_albums
+  app.list_all_genres
+  app.list_all_music_albums
 end
 
-def get_user_input(prompt)
-  print prompt
-  gets.chomp
-end
+main

@@ -26,7 +26,7 @@ module GenreModule
   # Display information about each music genre.
   def display_genre_info
     @genres.each_with_index do |genre_item_data, index|
-      puts "#{index}. #{genre_item_data.name}"
+      puts "(#{index + 1}) #{genre_item_data.name}"
     end
   end
 end
