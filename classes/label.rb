@@ -13,6 +13,15 @@ class Label
 
   def add_item(item)
     @items << item
-    item.set.label(self)
+    item.label = self
+  end
+
+  def to_json(options = {})
+    {
+      id: @id,
+      title: @title,
+      color: @color,
+      items: @items.map(&:to_json)
+    }.to_json(options)
   end
 end

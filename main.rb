@@ -1,10 +1,10 @@
 # main.rb
-require_relative 'Classes/item'
+require_relative 'Utils/book_handler'
 
 # Entry point for the console app
 class Main
   def initialize
-    # Your initialization code here
+    @book_handler = BookHandler.new
   end
 
   def menu_option
@@ -28,33 +28,14 @@ class Main
       choice = gets.chomp.to_i
 
       case choice
-      when 1 then list_books
-      when 2 then list_labels
-      when 3 then add_book
-      when 10 then quit
+      when 1 then @book_handler.list_books
+      when 2 then @book_handler.list_labels
+      when 3 then @book_handler.add_book
+      when 10 then @book_handler.quit
       else
         puts 'Invalid option. Please try again.'
       end
     end
-  end
-
-  private
-
-  def list_books
-    # Implement logic to list all books
-  end
-
-  def list_labels
-    # Implement logic to list all labels
-  end
-
-  def add_book
-    # Implement logic to add a book
-  end
-
-  def quit
-    puts 'Quitting the app Goodbye!'
-    exit
   end
 end
 
