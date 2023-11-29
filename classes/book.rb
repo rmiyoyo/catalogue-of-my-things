@@ -10,9 +10,18 @@ class Book < Item
     @publisher = publisher
   end
 
+  def to_json(options = {})
+    {
+      id: @id,
+      publish_date: @publish_date,
+      cover_state: @cover_state,
+      publisher: @publisher
+    }.to_json(options)
+  end
+
   private
 
   def can_be_archived?
-    super || @cover_state == 'bad'
+    super || @cover_state.downcase == 'bad'
   end
 end
