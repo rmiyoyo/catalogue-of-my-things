@@ -2,10 +2,12 @@
 require_relative 'item'
 
 class Label
-  attr_accessor :name, :items
+  attr_accessor :name, :title, :color_item, :items
 
-  def initialize(name)
+  def initialize(name, title, color_item)
     @name = name
+    @title = title
+    @color_item = color_item
     @item = []
   end
 
