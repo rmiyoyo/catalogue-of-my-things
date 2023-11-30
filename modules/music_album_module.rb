@@ -32,6 +32,14 @@ module MusicAlbumModule
     on_spotify ? 'On Spotify.' : 'Not on Spotify.'
   end
 
+  # Validates if a given date string is in the correct format.
+  def valid_date?(date)
+    Date.parse(date)
+    true
+  rescue ArgumentError
+    false
+  end
+
   private
 
   # Takes and validates user input for the published date of a music album.
@@ -71,13 +79,5 @@ module MusicAlbumModule
     else
       puts "\n Error: The music album was not created!\n\n"
     end
-  end
-
-  # Validates if a given date string is in the correct format.
-  def valid_date?(date)
-    Date.parse(date)
-    true
-  rescue ArgumentError
-    false
   end
 end

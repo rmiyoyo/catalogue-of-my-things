@@ -1,3 +1,4 @@
+require 'date'
 require_relative 'item'
 
 class MusicAlbum < Item
@@ -13,6 +14,10 @@ class MusicAlbum < Item
 
   # Check if the music album can be archived based on the superclass criteria and Spotify availability.
   def can_be_archived?
-    super && @on_spotify
+    @on_spotify && years_since_publish_date > 10
+  end
+
+  def years_since_publish_date
+    Date.today.year - @publish_date.year
   end
 end
