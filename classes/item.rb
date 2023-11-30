@@ -1,3 +1,6 @@
+# item.rb
+require 'date'
+
 class Item
   attr_accessor :publish_date, :archived
   attr_reader :id, :genre, :author, :label, :source
@@ -37,6 +40,6 @@ class Item
   private
 
   def can_be_archived?
-    @publish_date < 10.years.ago
+    Date.today.year - @publish_date > 10
   end
 end
