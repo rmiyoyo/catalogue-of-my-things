@@ -15,7 +15,7 @@ class Genre
   # Add an item to the genre's collection, establishing a bidirectional relationship.
   def add_item(item)
     @items << item unless @items.include?(item)
-    item.genre = self
+    item.genre = self if item.respond_to?(:genre=)
   end
 
   private

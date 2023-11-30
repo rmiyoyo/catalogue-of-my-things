@@ -4,7 +4,7 @@ module GenreModule
   # Create a new music genre based on user input.
   def create_a_genre
     print 'Add a new music genre: '
-    genre_name = gets.chomp.strip
+    genre_name = $stdin.gets.chomp.strip
     if genre_name.empty?
       puts "Invalid input. No genre has been created.\n\n"
     else
