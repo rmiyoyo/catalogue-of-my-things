@@ -1,9 +1,11 @@
-# main.rb
+require_relative 'classes/item'
+require_relative 'app'
 require_relative 'Utils/book_handler'
 
 # Entry point for the console app
 class Main
   def initialize
+    @app = App.new
     @book_handler = BookHandler.new
   end
 
@@ -18,7 +20,8 @@ class Main
     puts '7. List all games'
     puts '8. List all authors'
     puts '9. Add a game'
-    puts '10. Quit'
+    puts '10. Add a music genre'
+    puts '11. Quit'
   end
 
   def start
@@ -31,7 +34,11 @@ class Main
       when 1 then @book_handler.list_books
       when 2 then @book_handler.list_labels
       when 3 then @book_handler.add_book
-      when 10 then @book_handler.quit
+      when 4 then @app.list_all_music_albums
+      when 5 then @app.list_all_genres
+      when 6 then @app.create_a_music_album
+      when 10 then @app.create_a_genre
+      when 11 then @book_handler.quit
       else
         puts 'Invalid option. Please try again.'
       end
