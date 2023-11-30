@@ -1,5 +1,23 @@
 -- schema.sql
 
+-- Define the catalog_of_my_things database
+CREATE DATABASE catalog_of_my_things;
+
+-- Define the books table
+CREATE TABLE Books (
+    id SERIAL PRIMARY KEY,
+    publisher VARCHAR(255),
+    cover_state VARCHAR(255),
+    publisher_date DATE
+),
+
+-- Define the labels table
+CREATE TABLE Labels (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    color VARCHAR(255),
+)
+
 -- Define the genres table
 CREATE TABLE genres (
   id VARCHAR(36) PRIMARY KEY,
