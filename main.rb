@@ -10,6 +10,8 @@ class Main
   end
 
   def menu_option
+    puts "\n Welcome to the Catalogue of My Things!"
+    puts " Data has been created and loaded successfully...\n\n"
     puts 'Choose an option:'
     puts '1. List all books'
     puts '2. List all labels'
@@ -25,11 +27,10 @@ class Main
   end
 
   def start
+    @app.load_data
     loop do
       menu_option
-
       choice = gets.chomp.to_i
-
       case choice
       when 1 then @book_handler.list_books
       when 2 then @book_handler.list_labels
@@ -37,8 +38,13 @@ class Main
       when 4 then @app.list_all_music_albums
       when 5 then @app.list_all_genres
       when 6 then @app.create_a_music_album
+      when 7 then @app.show_games_catalogue
+      when 8 then @app.list_authors_catalogue
+      when 9 then @app.add_game
       when 10 then @app.create_a_genre
-      when 11 then @book_handler.quit
+      when 11
+        @app.save_data
+        @book_handler.quit
       else
         puts 'Invalid option. Please try again.'
       end

@@ -3,6 +3,7 @@ require_relative '../Classes/item'
 require_relative '../Classes/book'
 require_relative '../Classes/label'
 require_relative 'book_service'
+require_relative '../app'
 
 class BookHandler
   def initialize
