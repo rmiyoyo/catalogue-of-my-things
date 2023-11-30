@@ -1,0 +1,18 @@
+[
+  {
+    "id": 268,
+    "title": "True lies",
+    "color": "blue",
+    "items": [
+
+    ]
+  },
+  {
+    "id": 981,
+    "title": "Ghost",
+    "color": "red",
+    "items": [
+      "{\"id\":397,\"publish_date\":2023,\"cover_state\":\"good\",\"publisher\":\"ronald\"}"
+    ]
+  }
+]

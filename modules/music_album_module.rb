@@ -8,6 +8,7 @@ module MusicAlbumModule
     album_on_spotify = take_valid_spotify_choice
 
     generate_music_album(album_published_date, album_on_spotify)
+    save_albums
   end
 
   # Lists all music albums, displaying their publication dates and Spotify status.

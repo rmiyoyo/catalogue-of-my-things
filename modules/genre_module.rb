@@ -9,6 +9,7 @@ module GenreModule
       puts "Invalid input. No genre has been created.\n\n"
     else
       @genres << Genre.new(genre_name)
+      save_genres
       puts "\nNew genre created successfully!\n\n"
     end
   end

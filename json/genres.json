@@ -1,10 +1,14 @@
 [
   {
-    "id": "455c6548-cb11-4dd7-bcf2-ab5f55eff532",
+    "id": "15ddee32-7488-4d97-970d-848de3401c69",
     "name": "pop"
   },
   {
-    "id": "25a65c54-6fff-4f70-88ab-006f40b65b83",
+    "id": "00fb4ac4-08d6-45df-8c9d-54eda8a5ee1e",
     "name": "jazz"
+  },
+  {
+    "id": "06d71c54-5435-4626-9dbd-bcef7bb6fe22",
+    "name": "Rock"
   }
 ]
