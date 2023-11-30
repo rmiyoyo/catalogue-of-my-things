@@ -27,7 +27,7 @@ class BookHandler
 
   def add_book
     puts 'Enter book details:'
-    get_user_input('Title:')
+    get_user_input('Full Name')
     publish_date = get_user_input('Publish Date YYYY-MM-DD:').to_i
     cover_state = get_user_input('Cover State [bad/good]:')
     publisher = get_user_input('Publisher:')
