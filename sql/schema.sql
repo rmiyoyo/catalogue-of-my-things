@@ -9,14 +9,14 @@ CREATE TABLE Books (
     publisher VARCHAR(255),
     cover_state VARCHAR(255),
     publisher_date DATE
-),
+);
 
 -- Define the labels table
 CREATE TABLE Labels (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     color VARCHAR(255),
-)
+);
 
 -- Define the genres table
 CREATE TABLE genres (
@@ -32,4 +32,19 @@ CREATE TABLE music_albums (
   on_spotify BOOLEAN NOT NULL,
   genre_id VARCHAR(36),
   FOREIGN KEY (genre_id) REFERENCES genres(id)
+);
+
+-- Define the games table
+CREATE TABLE games (
+  id INT NOT NULL PRIMARY KEY,
+  publish_date DATE NOT NULL,
+  multiplayer VARCHAR(10) NOT NULL,
+  date_last_played DATE NOT NULL,
+);
+
+-- Define the authors table
+CREATE TABLE authors (
+  id INT NOT NULL PRIMARY KEY,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL
 );
