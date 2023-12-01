@@ -12,7 +12,7 @@ class BookHandler
   end
 
   def list_books
-    puts 'List of Books:'
+    puts "\nList of Books:"
     @books.each do |book|
       puts("ID: #{book.id}, Publish Date: #{book.publish_date}, Archived: #{book.archived},
       Cover State: #{book.cover_state}, Publisher: #{book.publisher}")
@@ -20,14 +20,14 @@ class BookHandler
   end
 
   def list_labels
-    puts 'List of Labels:'
+    puts "\nList of Labels:"
     @labels.each do |label|
       puts "ID: #{label.id}, Title: #{label.title}, Color: #{label.color}"
     end
   end
 
   def add_book
-    puts 'Enter book details:'
+    puts "\nEnter book details:"
     get_user_input('Full Name')
     publish_date = get_user_input('Publish Date YYYY-MM-DD:').to_i
     cover_state = get_user_input('Cover State [bad/good]:')
@@ -44,11 +44,11 @@ class BookHandler
     BookService.save_books(@books)
     BookService.save_labels(@labels)
 
-    puts 'Book added successfully!'
+    puts "\nBook added successfully!"
   end
 
   def quit
-    puts 'Quitting the app. Goodbye!'
+    puts "\nQuitting the app. Goodbye!"
     exit
   end
 
@@ -64,7 +64,7 @@ class BookHandler
   end
 
   def create_label
-    puts 'Enter label details:'
+    puts "\nEnter label details:"
     label_title = get_user_input('Title:')
     label_color = get_user_input('Color:')
 

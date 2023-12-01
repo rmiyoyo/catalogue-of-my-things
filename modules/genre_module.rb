@@ -6,7 +6,7 @@ module GenreModule
     print 'Add a new music genre: '
     genre_name = $stdin.gets.chomp.strip
     if genre_name.empty?
-      puts "Invalid input. No genre has been created.\n\n"
+      puts "\nInvalid input. No genre has been created.\n\n"
     else
       @genres << Genre.new(genre_name)
       save_genres
@@ -19,7 +19,7 @@ module GenreModule
     if @genres.empty?
       puts "\nNo music genres found.\n\n"
     else
-      puts 'List of all genres:'
+      puts "\nList of all genres:"
       display_genre_info
     end
   end

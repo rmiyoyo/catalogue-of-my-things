@@ -16,7 +16,7 @@ module MusicAlbumModule
     if @musicalbums.empty?
       puts "\nNo music albums found.\n\n"
     else
-      puts 'List of all albums:'
+      puts "\nList of all albums:"
       display_album_info
     end
   end
