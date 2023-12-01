@@ -1,4 +1,3 @@
-# book_spec.rb
 require_relative '../classes/book'
 
 RSpec.describe Book do
