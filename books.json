@@ -1,0 +1,20 @@
+[
+  {
+    "id": 395,
+    "publish_date": 2023,
+    "cover_state": "bad",
+    "publisher": "Anold"
+  },
+  {
+    "id": 750,
+    "publish_date": 2023,
+    "cover_state": "bad",
+    "publisher": "james"
+  },
+  {
+    "id": 397,
+    "publish_date": 2023,
+    "cover_state": "good",
+    "publisher": "ronald"
+  }
+]
