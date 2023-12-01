@@ -1,6 +1,6 @@
 require_relative 'classes/item'
 require_relative 'app'
-require_relative 'Utils/book_handler'
+require_relative 'utils/book_handler'
 
 # Entry point for the console app
 class Main
@@ -9,44 +9,73 @@ class Main
     @book_handler = BookHandler.new
   end
 
-  def menu_option
-    puts "\n Welcome to the Catalogue of My Things!"
-    puts " Data has been created and loaded successfully...\n\n"
-    puts 'Choose an option:'
-    puts '1. List all books'
-    puts '2. List all labels'
-    puts '3. Add a book'
-    puts '4. List all music albums'
-    puts '5. List all genres'
-    puts '6. Add a music album'
-    puts '7. List all games'
-    puts '8. List all authors'
-    puts '9. Add a game'
-    puts '10. Add a music genre'
-    puts '11. Quit'
+  def menu_options
+    {
+      1 => 'List all books',
+      2 => 'List all book labels',
+      3 => 'List all game authors',
+      4 => 'List all music albums',
+      5 => 'List of music genres',
+      6 => 'Show the game catalog',
+      7 => 'Add a new game',
+      8 => 'Add a new book',
+      9 => 'Add a new music album',
+      10 => 'Create a new music genre',
+      11 => 'Quit (but we hope you stay!)'
+    }
+  end
+
+  def menu_options_display
+    puts "\nWelcome to the Catalog Menu!"
+    options = menu_options
+    options.each { |key, description| puts "#{key}. #{description}\n" }
+    print "\nEnter a choice: "
+  end
+
+  def take_action(app, input)
+    action_mapping = {
+      3 => :list_authors_catalogue,
+      4 => :list_all_music_albums,
+      5 => :list_all_genres,
+      6 => :show_games_catalogue,
+      7 => :add_game,
+      9 => :create_a_music_album,
+      10 => :create_a_genre,
+      11 => :quit
+    }
+
+    action = action_mapping[input]
+    app.public_send(action) if app.respond_to?(action)
+  end
+
+  def take_action_for_book_handler(input)
+    book_handler_actions = {
+      1 => :list_books,
+      2 => :list_labels,
+      8 => :add_book
+    }
+
+    action = book_handler_actions[input]
+    @book_handler.public_send(action) if @book_handler.respond_to?(action)
   end
 
   def start
     @app.load_data
-    loop do
-      menu_option
-      choice = gets.chomp.to_i
-      case choice
-      when 1 then @book_handler.list_books
-      when 2 then @book_handler.list_labels
-      when 3 then @book_handler.add_book
-      when 4 then @app.list_all_music_albums
-      when 5 then @app.list_all_genres
-      when 6 then @app.create_a_music_album
-      when 7 then @app.show_games_catalogue
-      when 8 then @app.list_authors_catalogue
-      when 9 then @app.add_game
-      when 10 then @app.create_a_genre
-      when 11
-        @app.save_data
-        @book_handler.quit
+    input = 0
+
+    until input == menu_options.size
+      menu_options_display
+      input = gets.chomp.to_i
+
+      unless menu_options.key?(input)
+        puts 'Invalid option. Please choose a number from the menu!'
+        next
+      end
+
+      if [1, 2, 8].include?(input)
+        take_action_for_book_handler(input)
       else
-        puts 'Invalid option. Please try again.'
+        take_action(@app, input)
       end
     end
   end
