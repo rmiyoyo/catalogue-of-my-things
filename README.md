@@ -5,23 +5,26 @@ A console app that will help us to keep a record of different types of things we
 
 ## 📗 Table of Contents <a name="table-of-contents"></a>
 
-- [catalogue-of-my-things](#catalogue-of-my-things)
-  - [Table of Contents](#table-of-contents)
-  - [Built With ](#built-with)
-  - [Tech Stack ](#tech-stack)
-  - [Key Features ](#key-features)
-  - [Live Demo ](#live-demo)
-  - [Getting Started ](#getting-started)
-    - [Prerequisites ](#prerequisites)
-    - [Setup ](#setup)
-    - [Install ](#install)
-  - [Usage ](#usage)
-  - [Author ](#author)
-  - [Future Features ](#future-features)
-  - [Contributing ](#contributing)
-  - [Show your support ](#show-your-support)
-  - [Acknowledgements ](#acknowledgements)
-  - [License ](#license)
+- [catalogue-of-my-things ](#catalogue-of-my-things-)
+  - [📗 Table of Contents ](#-table-of-contents-)
+  - [**Built With** ](#built-with-)
+    - [**Tech Stack**  ](#tech-stack--)
+    - [**Key Features**  ](#key-features--)
+  - [**Live Demo**](#live-demo)
+  - [**Getting Started**](#getting-started)
+    - [**Prerequisites**  ](#prerequisites--)
+    - [**Setup** ](#setup-)
+    - [**Install**](#install)
+  - [**Usage**](#usage)
+  - [**Authors** ](#authors-)
+    - [Richard Sikaonga](#richard-sikaonga)
+    - [Nelly Telli](#nelly-telli)
+    - [Raphael Miyoyo](#raphael-miyoyo)
+  - [**Future Features** ](#future-features-)
+  - [**Contributing** ](#contributing-)
+  - [**Show your support** ](#show-your-support-)
+  - [**Acknowledgments** ](#acknowledgments-)
+  - [📝 License ](#-license-)
 
 ## **Built With** <a name="built-with"></a>
 
@@ -59,7 +62,7 @@ A console app that will help us to keep a record of different types of things we
 
 ## **Live Demo**<a name="live-demo"></a>
 
-Explore the live demo through [our video presentation.]()
+Explore the live demo through [our video presentation.](https://drive.google.com/file/d/1ndC-hPDGLc5XxtC7XUq5cj-FibSb7ebi/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
