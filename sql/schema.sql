@@ -3,6 +3,24 @@
 -- Define the catalog_of_my_things database
 CREATE DATABASE catalog_of_my_things;
 
+-- Define the items table
+CREATE TABLE items (
+    id INT PRIMARY KEY,
+    publish_date DATE NOT NULL,
+    archived BOOLEAN NOT NULL,
+    genre_id VARCHAR(36),
+    author_id INT,
+    label_id INT,
+    CONSTRAINT fk_genre FOREIGN KEY (genre_id) REFERENCES genres (id),
+    CONSTRAINT fk_author FOREIGN KEY (author_id) REFERENCES authors (id),
+    CONSTRAINT fk_label FOREIGN KEY (label_id) REFERENCES labels (id)
+);
+
+-- Add indexes for items table
+CREATE INDEX idx_items_genre_id ON items (genre_id);
+CREATE INDEX idx_items_author_id ON items (author_id);
+CREATE INDEX idx_items_label_id ON items (label_id);
+
 -- Define the books table
 CREATE TABLE Books (
     id SERIAL PRIMARY KEY,
@@ -36,10 +54,12 @@ CREATE TABLE music_albums (
 
 -- Define the games table
 CREATE TABLE games (
-  id INT NOT NULL PRIMARY KEY,
-  publish_date DATE NOT NULL,
-  multiplayer VARCHAR(10) NOT NULL,
-  date_last_played DATE NOT NULL,
+    id INT PRIMARY KEY,
+    multiplayer VARCHAR(10) NOT NULL,
+    date_last_played DATE NOT NULL,
+    publish_date DATE NOT NULL,
+    item_id INT,
+    FOREIGN KEY (item_id) REFERENCES items (id)
 );
 
 -- Define the authors table
